@@ -1,0 +1,43 @@
+<div class="mt-3">
+  <button class="btn btn-primary" (click)="listDataFromApi()">List data from Api</button>
+  <button class="btn btn-info" (click)="listDataFromStore()">List data from Store</button>
+
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <th scope="row">{{ user.id }}</th>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.address.street }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table mt-3" *ngIf="users$">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users$">
+        <th scope="row">{{ user.id }}</th>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.address.street }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
