@@ -14,7 +14,7 @@ export class ResultsComponent implements OnInit {
 
   users:any = []
 
-  users$:Observable<any>
+  usersStore:Observable<any>
 
   constructor(
     private resultService: ResultsService,
@@ -34,8 +34,8 @@ export class ResultsComponent implements OnInit {
 
   listDataFromStore(){
     //console.log('From store')
-    this.store.select(state => state.usersFromApi.usersData.users).subscribe(res => this.users$ = res)
-    console.log(this.users$)
+    this.store.select(state => state.usersFromApi.usersData.users).subscribe(res => this.usersStore = res)
+    console.log(this.usersStore)
   }
 
 

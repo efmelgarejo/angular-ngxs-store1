@@ -21,7 +21,7 @@
     </tbody>
   </table>
 
-  <table class="table mt-3" *ngIf="users$">
+  <table class="table mt-3" *ngIf="usersStore">
     <thead>
       <tr>
         <th scope="col">Id</th>
@@ -31,7 +31,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of users$">
+      <tr *ngFor="let user of usersStore">
         <th scope="row">{{ user.id }}</th>
         <td>{{ user.name }}</td>
         <td>{{ user.email }}</td>
