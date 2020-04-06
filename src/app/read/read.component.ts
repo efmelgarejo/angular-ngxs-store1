@@ -41,7 +41,7 @@ export class ReadComponent implements OnInit {
     this.store.dispatch(new RemoveTutorial(name))
   }
 
-  setUsers(){
+  setUsersToStore(){
     //this.store.select(state => state.usersFromApi.usersData).subscribe(u=>console.log("USERS",u))
     this.resultService.getUsers().subscribe( res => {
       this.store.dispatch(new SetUsersFromApi(res))
