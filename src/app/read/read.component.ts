@@ -33,7 +33,7 @@ export class ReadComponent implements OnInit {
     this.tutorials$.subscribe(res => console.log(res))
     this.store.select(state => state.tutoriales.arr_tutorials).subscribe(res => console.log(res)) */
 
-    this.setUsers()
+    //this.setUsers()
   
   }
 
@@ -41,7 +41,7 @@ export class ReadComponent implements OnInit {
     this.store.dispatch(new RemoveTutorial(name))
   }
 
-  setUsers(){
+  setUsersToStore(){
     //this.store.select(state => state.usersFromApi.usersData).subscribe(u=>console.log("USERS",u))
     this.resultService.getUsers().subscribe( res => {
       this.store.dispatch(new SetUsersFromApi(res))

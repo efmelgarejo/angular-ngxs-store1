@@ -69,6 +69,7 @@ export class UsersState {
 
     @Action(SetUsersFromApi)
     SetUsersFromApi(context: StateContext<any>, action: SetUsersFromApi){
+        console.log("AA",action)
         context.patchState({usersData: action})
     }
 
