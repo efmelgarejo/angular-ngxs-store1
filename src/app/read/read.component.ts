@@ -33,7 +33,7 @@ export class ReadComponent implements OnInit {
     this.tutorials$.subscribe(res => console.log(res))
     this.store.select(state => state.tutoriales.arr_tutorials).subscribe(res => console.log(res)) */
 
-    //this.setUsers()
+    //this.setUsersToStore()
   
   }
 
