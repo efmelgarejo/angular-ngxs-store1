@@ -1,0 +1,10 @@
+
+
+<input type="file" (change)="changeFile($event.target.files)" name="" id="">
+
+
+<div *ngIf="fileSelected" [ngStyle]="{'color':fileValid?'green':'red'}">
+  <h3 *ngIf="fileValid">{{fileSelected.name}} - Archivo válido</h3>
+  <h3 *ngIf="!fileValid">{{fileSelected.name}} - Archivo no válido</h3>
+</div>
+

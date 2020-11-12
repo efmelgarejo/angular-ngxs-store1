@@ -1,0 +1,11 @@
+<input type="file" (change)="changeFile($event.target.files)" multiple name="" id="">
+
+<div *ngIf="filesSelected?.length!=0">
+  <div *ngFor="let file of filesSelected">
+    <div [ngStyle]="{'color':file.valid?'green':'red'}">{{file.name}}</div>
+  </div>
+</div>
+
+<br><br>
+
+<button type="submit" [disabled]="!filesValidList?.length > 0" (click)="enviarArchivos()">Enviar</button>

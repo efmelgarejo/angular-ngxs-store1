@@ -13,6 +13,8 @@ import { TutorialState, UsersState } from './state/tutorial.state';
 import { CreateComponent } from './create/create.component';
 import { ReadComponent } from './read/read.component';
 import { ResultsComponent } from './results/results.component';
+import { ImportFileComponent } from './components/import-file/import-file.component';
+import { ImportFileMultipleComponent } from './components/import-file-multiple/import-file-multiple.component';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import { ResultsComponent } from './results/results.component';
       CreateComponent,
       ReadComponent,
       ResultsComponent,
+      ImportFileComponent,
+      ImportFileMultipleComponent,
    ],
    imports: [
       BrowserModule,
