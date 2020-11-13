@@ -1,0 +1,24 @@
+
+<div class="area" 
+  (dragover)="onDragOver()" 
+  (dragleave)="onDragLeave()"
+  (drop)="onDrop()"
+  [class.dragging]="isDragActive"
+>
+  <div class="text-icon">
+    <h4>Importar archivos</h4>
+    <div>Arrastra tus archivos aquí o haz click </div>
+  </div>
+  <input type="file" draggable="true"  (change)="changeFile($event.target.files)" multiple >
+</div>
+
+
+<div *ngIf="filesSelected?.length!=0">
+  <div *ngFor="let file of filesSelected">
+    <div [ngStyle]="{'color':file.valid?'green':'red'}">{{file.name}}</div>
+  </div>
+</div>
+
+<br><br>
+
+<!-- <button type="submit" [disabled]="!filesValidList?.length > 0" (click)="enviarArchivos()">Enviar</button> -->

@@ -15,6 +15,7 @@ import { ReadComponent } from './read/read.component';
 import { ResultsComponent } from './results/results.component';
 import { ImportFileComponent } from './components/import-file/import-file.component';
 import { ImportFileMultipleComponent } from './components/import-file-multiple/import-file-multiple.component';
+import { ImportFileDragdropComponent } from './components/import-file-dragdrop/import-file-dragdrop.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ImportFileMultipleComponent } from './components/import-file-multiple/i
       ResultsComponent,
       ImportFileComponent,
       ImportFileMultipleComponent,
+      ImportFileDragdropComponent,
    ],
    imports: [
       BrowserModule,
