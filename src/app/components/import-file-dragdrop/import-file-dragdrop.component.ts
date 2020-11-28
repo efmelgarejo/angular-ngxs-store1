@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 interface Archivo {
-  lastModified: 1604109750249
+  lastModified: number;
   name: string;
   lastModifiedDate: Date;
   size: number;
@@ -19,7 +19,7 @@ export class ImportFileDragdropComponent implements OnInit {
   private filesSelected: Array<Archivo> = [];
   private filesValidList: Array<Archivo> = []
   private fileValid: boolean = false;
-  private isDragActive: boolean;
+  private isDragActive: boolean = false;
 
   constructor() { }
 
