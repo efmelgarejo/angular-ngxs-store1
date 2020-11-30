@@ -1,0 +1,15 @@
+
+.card-body {
+  margin: 1.25rem;
+  padding: 0;
+  transition: all 1s ease-in;
+}
+
+.card.select{
+  background-color: #FF0;
+}
+
+.card.select .card-body {
+  height: 150px;
+  overflow: hidden;
+}
