@@ -1,13 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Archivo {
-  lastModified: 1604109750249
-  name: string;
-  lastModifiedDate: Date;
-  size: number;
-  type: string;
-  valid?: boolean
-}
+import { Router } from '@angular/router';
+import { DataArchivo } from 'src/app/data/dataFiles';
+import { IArchivo } from 'src/app/models/file.model';
+import { InfoFileService } from 'src/app/services/info-file.service';
 
 @Component({
   selector: 'app-import-file-multiple',
@@ -16,23 +11,26 @@ interface Archivo {
 })
 export class ImportFileMultipleComponent implements OnInit {
 
-  private filesSelected: Array<Archivo> = [];
-  private filesValidList: Array<Archivo> = []
-  private fileValid: boolean = false;
+  public filesSelected: Array<IArchivo> = [];
+  public filesValidList: Array<IArchivo> = []
+  public fileValid: boolean = false;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private infoFileService: InfoFileService
+    ) { }
 
   ngOnInit() {
   }
 
-  changeFile(files: Array<Archivo>) {
+  changeFile(files: Array<IArchivo>) {
     this.filesSelected = [];
     this.filesValidList = []
 
     this.filesSelected = Array.from(files);
     
     
-    const validExtensions = ['xlsx', 'txt', 'csv'];
+    const validExtensions = ['xlsx', 'xlsx', 'txt', 'csv'];
     
     
     this.filesSelected.forEach(file => {
@@ -45,6 +43,7 @@ export class ImportFileMultipleComponent implements OnInit {
       } else {
         this.filesValidList.push(file)
         file.valid = true;
+        file.infoServer = DataArchivo
       }
     })
     
@@ -54,7 +53,9 @@ export class ImportFileMultipleComponent implements OnInit {
   }
 
   enviarArchivos(){
-    console.log("ENVIANDO...")
+    console.log("ENVIANDO...");
+    this.infoFileService.infoFileGlobal = this.filesValidList;
+    this.router.navigate(['/validar-datos']);
   }
 
 }

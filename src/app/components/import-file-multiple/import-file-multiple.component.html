@@ -8,4 +8,11 @@
 
 <br><br>
 
-<button type="submit" [disabled]="!filesValidList?.length > 0" (click)="enviarArchivos()">Enviar</button>
+<button type="submit" [disabled]="filesValidList?.length == 0" (click)="enviarArchivos()">Enviar</button>
+
+<div class="row">
+  <div class="col-md-4 mb-3" *ngFor="let file of filesValidList">
+    <app-item-files [file]="file"></app-item-files>
+  </div>
+</div>
+

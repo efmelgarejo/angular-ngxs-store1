@@ -16,6 +16,10 @@ import { ResultsComponent } from './results/results.component';
 import { ImportFileComponent } from './components/import-file/import-file.component';
 import { ImportFileMultipleComponent } from './components/import-file-multiple/import-file-multiple.component';
 import { ImportFileDragdropComponent } from './components/import-file-dragdrop/import-file-dragdrop.component';
+import { AcordeonComponent } from './components/acordeon/acordeon.component';
+import { ItemAcordeonComponent } from './components/acordeon/item-acordeon/item-acordeon.component';
+import { ItemFilesComponent } from './components/import-file-multiple/item-files/item-files.component';
+import { ValidateDataFilesComponent } from './components/import-file-multiple/validate-data-files/validate-data-files.component';
 
 
 @NgModule({
@@ -27,6 +31,10 @@ import { ImportFileDragdropComponent } from './components/import-file-dragdrop/i
       ImportFileComponent,
       ImportFileMultipleComponent,
       ImportFileDragdropComponent,
+      AcordeonComponent,
+      ItemAcordeonComponent,
+      ItemFilesComponent,
+      ValidateDataFilesComponent
    ],
    imports: [
       BrowserModule,

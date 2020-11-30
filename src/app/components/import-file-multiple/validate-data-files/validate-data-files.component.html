@@ -1,0 +1,22 @@
+<h3>Importar archivos</h3>
+<p>Validar datos de los archivos</p>
+
+<div class="row" *ngIf="files?.length > 0">
+  <div class="col-md-4 mb-3" *ngFor="let file of files; let id = index">
+    <div class="card">
+      <div class="card-header">
+        <h4> Archivo N° {{id+1}} - {{file.name}}</h4>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Monto soles <strong>{{file.infoServer.datosCobro.montoSoles}} </strong></p>
+        <p class="card-text">Monto dolares <strong>{{file.infoServer.datosCobro.montoDolares}} </strong></p>
+        <p class="card-text">Modalidad <strong>{{file.infoServer.datosCobro.modalidad}} </strong></p>
+        <p class="card-text">Registros <strong>{{file.infoServer.datosCobro.registros}} </strong></p>
+        <p class="card-text">Fecha de despliegue <strong>{{file.infoServer.datosCobro.fechaDespliegue}} </strong></p>
+      </div>
+      <div class="card-footer">
+        <a href="javascript:void(0);" class="btn btn-primary" (click)="hiddeCard(files)">Ver más detalles</a>
+      </div>
+    </div>
+  </div>
+</div>
