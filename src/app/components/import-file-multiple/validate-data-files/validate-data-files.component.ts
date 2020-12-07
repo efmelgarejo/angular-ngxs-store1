@@ -8,15 +8,18 @@ import { InfoFileService } from 'src/app/services/info-file.service';
 })
 export class ValidateDataFilesComponent implements OnInit {
 
-  files
+  filesArray
 
   constructor(
     private infoFileService: InfoFileService
   ) { }
 
   ngOnInit() {
-    this.files = this.infoFileService.infoFileGlobal
-    console.log(this.files)
+    //this.filesArray = this.infoFileService.infoFileGlobal;
+    this.infoFileService.filesObs.subscribe( f => {
+      this.filesArray = f
+      console.log(this.filesArray);
+    })
   }
 
   hiddeCard(archivo){

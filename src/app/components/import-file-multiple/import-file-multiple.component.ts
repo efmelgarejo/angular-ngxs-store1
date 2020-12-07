@@ -30,7 +30,7 @@ export class ImportFileMultipleComponent implements OnInit {
     this.filesSelected = Array.from(files);
     
     
-    const validExtensions = ['xlsx', 'xlsx', 'txt', 'csv'];
+    const validExtensions = ['xls', 'xlsx', 'txt', 'csv'];
     
     
     this.filesSelected.forEach(file => {
@@ -41,8 +41,8 @@ export class ImportFileMultipleComponent implements OnInit {
         file.valid = false;
         console.log(file)
       } else {
-        this.filesValidList.push(file)
         file.valid = true;
+        this.filesValidList.push(file)
         file.infoServer = DataArchivo
       }
     })
@@ -54,7 +54,9 @@ export class ImportFileMultipleComponent implements OnInit {
 
   enviarArchivos(){
     console.log("ENVIANDO...");
-    this.infoFileService.infoFileGlobal = this.filesValidList;
+    setTimeout( ()=>{
+      this.infoFileService.setFilesObs(this.filesValidList)
+    },3000)
     this.router.navigate(['/validar-datos']);
   }
 
